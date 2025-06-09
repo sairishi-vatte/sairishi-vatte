@@ -1,6 +1,8 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "@/components/navbar"; // ✅ import your navbar
+import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/navbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,22 +16,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Satya Sai Vatte | Live Editor",
-  description: "Official portfolio of Satya Sai Vatte, live film editor",
+  title: "Satya Sai Vatte | Portfolio",
+  description: "Live Editor & Creative Professional",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} pt-13 antialiased`}
       >
-        <Navbar />
-        <main className="pt-20">{children}</main>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
