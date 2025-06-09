@@ -2,7 +2,6 @@
 "use client";
 
 import { SITE_NAME, TAGLINE } from "@/constants";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {

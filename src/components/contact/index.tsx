@@ -1,7 +1,7 @@
 "use client";
 
 import { EMAIL, INSTAGRAM_URL } from "@/constants";
-import { Mail, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Mail, Instagram, Facebook } from "lucide-react";
 
 export default function ContactSection() {
   return (
